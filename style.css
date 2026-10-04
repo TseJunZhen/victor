@@ -1,0 +1,34 @@
+:root{
+  --bg:#0b0f17; --panel:#111722; --panel2:#0e141e; --text:#f3f6fb;
+  --muted:#9aa7b8; --line:#253044; --accent:#5f8cff; --max:1120px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.nav-wrap{position:sticky;top:0;z-index:20;background:rgba(11,15,23,.84);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;font-size:1.3rem;letter-spacing:-.04em}.brand span,.hero h1 span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;color:var(--muted);font-size:.9rem}.nav-links a:hover{color:var(--text)}.menu-btn{display:none;background:none;border:0;color:white;font-size:1.5rem}
+.hero{min-height:calc(100vh - 72px);display:flex;flex-direction:column;justify-content:center;padding:90px 0}
+.eyebrow,.section-kicker{font-size:.75rem;font-weight:700;letter-spacing:.18em;color:var(--accent)}
+.hero h1{font-size:clamp(3.2rem,8vw,7.2rem);line-height:.94;letter-spacing:-.065em;margin:20px 0 30px;max-width:1000px}
+.hero-copy{max-width:720px;color:var(--muted);font-size:1.12rem}.hero-copy strong{color:var(--text)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.btn{padding:12px 18px;border:1px solid var(--line);border-radius:8px;font-weight:600;font-size:.9rem}.btn.primary{background:var(--accent);border-color:var(--accent);color:white}.btn:hover{transform:translateY(-1px)}
+.tech-strip{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:70px;color:#c7d0dc;font-size:.85rem}.tech-strip i{width:4px;height:4px;background:var(--accent);border-radius:50%}
+.section{padding:120px 0}.alt{background:var(--panel2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:80px}.section h2{font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;letter-spacing:-.045em;margin:18px 0 55px}
+.two-col h2{margin-bottom:0}.body-copy{font-size:1.08rem;color:var(--muted);padding-top:36px}.body-copy p:first-child{margin-top:0}
+.timeline{border-top:1px solid var(--line)}.job{display:grid;grid-template-columns:250px 1fr;gap:50px;padding:42px 0;border-bottom:1px solid var(--line)}
+.job-meta{display:flex;flex-direction:column;color:var(--muted);font-size:.84rem}.job h3{font-size:1.4rem;margin:0}.company{color:var(--accent);font-weight:600;margin:4px 0 14px}.job p:not(.company){color:var(--muted);max-width:720px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.chips span{font-size:.75rem;padding:5px 9px;border:1px solid var(--line);border-radius:999px;color:#c9d3df}
+.skill-grid,.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.skill-card,.work-grid article{padding:28px;border:1px solid var(--line);background:var(--panel);border-radius:12px}
+.skill-card h3,.work-grid h3{margin:0 0 12px}.skill-card p,.work-grid p,.contact>p{color:var(--muted);margin:0}.work-grid article>span{color:var(--accent);font-size:.78rem;font-weight:700}.work-grid h3{margin-top:26px}
+.contact{padding-top:140px;padding-bottom:140px}.contact h2{font-size:clamp(3rem,7vw,6rem);margin-bottom:25px}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}.footer-inner{height:90px;display:flex;align-items:center;justify-content:space-between}
+@media(max-width:760px){
+  .menu-btn{display:block}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--panel);padding:22px;flex-direction:column;border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex}.hero{padding:70px 0}.hero h1{font-size:clamp(3rem,16vw,5rem)}
+  .section{padding:85px 0}.two-col,.job,.skill-grid,.work-grid{grid-template-columns:1fr}.two-col{gap:10px}.job{gap:20px}.job-meta{flex-direction:row;gap:14px}
+}
+@media print{
+  .nav-wrap,.actions,.menu-btn{display:none!important}body{background:white;color:#111}.alt{background:white}.section,.hero{padding:35px 0;min-height:auto}
+  .hero h1{font-size:48px}.hero h1 span,.section-kicker,.company{color:#333}.hero-copy,.body-copy,.job p:not(.company),.skill-card p,.work-grid p{color:#444}
+}
